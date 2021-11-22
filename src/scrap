@@ -1,0 +1,32 @@
+for (int z = 1000; z >= 0; z--)
+        {
+            sf::Vector2f leftPoint(cameraPosition.x - z * (angleCos + angleSin), 
+                cameraPosition.y + z * (angleSin - angleCos));
+            sf::Vector2f rightPoint(cameraPosition.x + z * (angleCos - angleSin), 
+                cameraPosition.y - z * (angleCos + angleSin));
+
+            float deltaX = (rightPoint.x - leftPoint.x) / screenSize.x;
+            float deltaY = (rightPoint.y - leftPoint.y) / screenSize.x;
+
+            for (unsigned int i = 0; i < screenSize.x; i++)
+            {
+                unsigned int index = ((int) GetModulo(leftPoint.x, size.x) + 
+                (int) GetModulo(leftPoint.y, size.y) * size.x) * 4;
+                float height = (cameraPosition.z - heightMapPixels[index]) / z * 100;
+                sf::Color color(colorMap[index], colorMap[index+1], 
+                    colorMap[index+2], colorMap[index+3]);
+
+                for (int i = 0; i < (int) height; )
+
+                sf::Vertex line[2] = 
+                {
+                    sf::Vertex(sf::Vector2f(leftPoint.x, screenSize.y - 1), color),
+                    sf::Vertex(sf::Vector2f(leftPoint.x, screenSize.y - height - 1), color)
+                };
+
+                renderWindow.draw(line, 2, sf::Lines);
+
+                leftPoint.x += deltaX;
+                leftPoint.y += deltaY;
+            }
+        }
