@@ -1,1 +1,30 @@
 # Voxel-Space-Rendering
+This is inspired by the original rendering idea of Voxel Space engine.
+
+## Voxel Space
+[Voxel Space](https://wikipedia.org/wiki/Voxel_Space) is voxel raster graphics rendering engine developed by Kyle Freeman.
+
+## Showcase
+![Gameplay (sort of)]()
+
+## How it works
+Engine casts a ray for each pixels column on the screen. Ray makes small steps through the world reading mountain height data from color values of height_map.png
+![height map]()
+and color from color_map.png
+![color map]()
+After calculating mountain fragment's height projection, engine draws a vertical line on the screen, taking occlusion into account. 
+
+## What has been used
+- [SFML library](https://www.sfml-dev.org) for rendering
+- [entt](https://github.com/skypjack/entt) for ECS and reactive system
+
+## How to run
+It is better to run a release optimized build:
+```
+make release && make run
+```
+
+To run with debug info:
+```
+make debug && make run
+```
