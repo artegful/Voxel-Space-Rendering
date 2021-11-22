@@ -1,4 +1,8 @@
 # Voxel-Space-Rendering
+[![build for linux](https://github.com/artegful/Voxel-Space-Rendering/actions/workflows/linux-build.yml/badge.svg)](https://github.com/artegful/Voxel-Space-Rendering/actions/workflows/linux-build.yml)
+[![build for mac](https://github.com/artegful/Voxel-Space-Rendering/actions/workflows/build-mac.yml/badge.svg)](https://github.com/artegful/Voxel-Space-Rendering/actions/workflows/build-mac.yml)
+[![build for windows](https://github.com/artegful/Voxel-Space-Rendering/actions/workflows/build-windows.yml/badge.svg)](https://github.com/artegful/Voxel-Space-Rendering/actions/workflows/build-windows.yml)
+
 This is inspired by the original rendering idea of Voxel Space engine.
 
 ## Voxel Space
